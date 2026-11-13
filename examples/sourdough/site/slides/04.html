@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shaping and Proofing the Loaf - slides</title><style>
+:root { --accent:#c2410c; } * { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #14120e; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.s { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; padding: 6vh 8vw; }
+.s.on { display: flex; } .s h2 { font-size: clamp(1.6rem, 4.5vw, 3.2rem); margin: 0 0 .6em; line-height: 1.15; }
+.s ul { font-size: clamp(1.05rem, 2.4vw, 1.7rem); line-height: 1.5; padding-left: 1.1em; } .s li { margin: .35em 0; }
+.s.cover h2 { font-size: clamp(2rem, 6vw, 4.2rem); } .kicker { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; }
+.bar { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--accent); transition: width .2s; }
+.ui { position: fixed; right: 1.2rem; bottom: 1rem; font-size: .85rem; color: #b9b1a3; } .ui a { color: #b9b1a3; }
+</style></head><body>
+<section class="s cover"><p class="kicker">Lesson 4 of 5</p><h2>Shaping and Proofing the Loaf</h2><p>Shape the dough and prepare it for baking.</p></section><section class="s"><h2>Shaping &amp; Proofing: Key to Great Sourdough</h2><ul><li>Transforms dough into structured loaf</li><li>Holds gas for even rise and crumb</li><li>Critical for flavor, texture, and oven spring</li><li>Poor shaping = collapsed or uneven bake</li></ul></section><section class="s"><h2>Palm Press Method: Create Tension</h2><ul><li>Turn dough out on lightly floured surface</li><li>Press with palm to form oval shape</li><li>Fold edges toward center, tuck under</li><li>Rotate and repeat for tight, smooth surface</li></ul></section><section class="s"><h2>Proofing: Support &amp; Rest</h2><ul><li>Use banneton or floured bowl</li><li>Dust with rice flour to prevent sticking</li><li>Seam-side up for best shape retention</li><li>Cover to prevent drying and skin formation</li></ul></section><section class="s"><h2>Proofing Options: Time &amp; Temperature</h2><ul><li>Room temp: 2–4 hours, open crumb</li><li>Cold proof: 8–12 hours, deeper flavor</li><li>Retardation slows fermentation</li><li>Let cold dough rest 1–2 hours before baking</li></ul></section><section class="s"><h2>Check Readiness: The Poke Test</h2><ul><li>Gently press side of dough</li><li>Slow spring-back (2–3 sec) = ready</li><li>Fast return = under-proofed</li><li>No return = over-proofed</li></ul></section><section class="s"><h2>Worked Example: 12-Hour Cold Proof</h2><ul><li>Shape at 6:00 PM, place in fridge at 6:30</li><li>Let sit at room temp 1.5 hours next day</li><li>Test: slow spring-back = perfect</li><li>Score and bake for best results</li></ul></section><section class="s"><h2>Try It: Step-by-Step</h2><ul><li>After bulk fermentation, shape with palm press</li><li>Place seam-side up in banneton or bowl</li><li>Cover and proof—room temp or fridge</li><li>Test with poke test before baking</li></ul></section>
+<div class="bar" id="bar"></div><div class="ui"><span id="n"></span> · <a href="../lessons/04.html">back to the lesson</a> · arrows / tap</div>
+<script>
+const S = [...document.querySelectorAll('.s')]; let i = 0;
+const show = k => { i = Math.max(0, Math.min(S.length - 1, k)); S.forEach((s, j) => s.classList.toggle('on', j === i));
+  document.getElementById('n').textContent = (i + 1) + ' / ' + S.length; document.getElementById('bar').style.width = ((i + 1) / S.length * 100) + '%'; };
+addEventListener('keydown', e => { if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) show(i + 1); if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) show(i - 1); });
+addEventListener('click', e => { if (e.target.closest('a')) return; show(e.clientX > innerWidth / 3 ? i + 1 : i - 1); });
+show(0);
+</script></body></html>

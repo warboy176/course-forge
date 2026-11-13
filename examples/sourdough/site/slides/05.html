@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baking and Troubleshooting - slides</title><style>
+:root { --accent:#c2410c; } * { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #14120e; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.s { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; padding: 6vh 8vw; }
+.s.on { display: flex; } .s h2 { font-size: clamp(1.6rem, 4.5vw, 3.2rem); margin: 0 0 .6em; line-height: 1.15; }
+.s ul { font-size: clamp(1.05rem, 2.4vw, 1.7rem); line-height: 1.5; padding-left: 1.1em; } .s li { margin: .35em 0; }
+.s.cover h2 { font-size: clamp(2rem, 6vw, 4.2rem); } .kicker { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; }
+.bar { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--accent); transition: width .2s; }
+.ui { position: fixed; right: 1.2rem; bottom: 1rem; font-size: .85rem; color: #b9b1a3; } .ui a { color: #b9b1a3; }
+</style></head><body>
+<section class="s cover"><p class="kicker">Lesson 5 of 5</p><h2>Baking and Troubleshooting</h2><p>Bake the loaf and address common problems.</p></section><section class="s"><h2>Baking Your Sourdough Loaf</h2><ul><li>Milestone of your sourdough journey</li><li>Final step after feeding, mixing, fermenting</li><li>Proper technique prevents common mistakes</li></ul></section><section class="s"><h2>Preheat &amp; Use Steam</h2><ul><li>Preheat Dutch oven lid on for 30+ mins</li><li>Use hot water tray for steam</li><li>Ensures rise and crisp crust</li></ul></section><section class="s"><h2>Score the Dough</h2><ul><li>Cut 1–2 shallow lines at 30–45°</li><li>Use sharp blade for clean cuts</li><li>Controls expansion and shape</li></ul></section><section class="s"><h2>Bake Covered &amp; Uncovered</h2><ul><li>Covered: 20 minutes for steam rise</li><li>Uncovered: 20–30 minutes for crisp crust</li><li>Never bake uncovered from start</li></ul></section><section class="s"><h2>Check Doneness with Thermometer</h2><ul><li>Insert into center of loaf</li><li>Ideal temp: 200–210°F (93–99°C)</li><li>Too low = gummy; too high = dry</li></ul></section><section class="s"><h2>Fix Common Problems</h2><ul><li>Dense crumb? Extend fermentation</li><li>Poor rise? Check starter &amp; proofing</li><li>Burnt crust? Lower temp or shorten time</li></ul></section><section class="s"><h2>Worked Example &amp; Try It</h2><ul><li>Proper preheat, steam, and timing</li><li>205°F = perfect doneness</li><li>Record results to improve next time</li></ul></section>
+<div class="bar" id="bar"></div><div class="ui"><span id="n"></span> · <a href="../lessons/05.html">back to the lesson</a> · arrows / tap</div>
+<script>
+const S = [...document.querySelectorAll('.s')]; let i = 0;
+const show = k => { i = Math.max(0, Math.min(S.length - 1, k)); S.forEach((s, j) => s.classList.toggle('on', j === i));
+  document.getElementById('n').textContent = (i + 1) + ' / ' + S.length; document.getElementById('bar').style.width = ((i + 1) / S.length * 100) + '%'; };
+addEventListener('keydown', e => { if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) show(i + 1); if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) show(i - 1); });
+addEventListener('click', e => { if (e.target.closest('a')) return; show(e.clientX > innerWidth / 3 ? i + 1 : i - 1); });
+show(0);
+</script></body></html>

@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Is Sourdough and How to Start a Starter - slides</title><style>
+:root { --accent:#c2410c; } * { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #14120e; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.s { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; padding: 6vh 8vw; }
+.s.on { display: flex; } .s h2 { font-size: clamp(1.6rem, 4.5vw, 3.2rem); margin: 0 0 .6em; line-height: 1.15; }
+.s ul { font-size: clamp(1.05rem, 2.4vw, 1.7rem); line-height: 1.5; padding-left: 1.1em; } .s li { margin: .35em 0; }
+.s.cover h2 { font-size: clamp(2rem, 6vw, 4.2rem); } .kicker { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; }
+.bar { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--accent); transition: width .2s; }
+.ui { position: fixed; right: 1.2rem; bottom: 1rem; font-size: .85rem; color: #b9b1a3; } .ui a { color: #b9b1a3; }
+</style></head><body>
+<section class="s cover"><p class="kicker">Lesson 1 of 5</p><h2>What Is Sourdough and How to Start a Starter</h2><p>Learn the basics of sourdough and begin creating a starter.</p></section><section class="s"><h2>What Is Sourdough?</h2><ul><li>Natural leavening from wild yeast &amp; bacteria</li><li>Made with just flour, water, and time</li><li>No commercial yeast needed</li><li>Tangy flavor from fermentation</li></ul></section><section class="s"><h2>What Is a Starter?</h2><ul><li>Living culture of flour &amp; water</li><li>Captures wild microbes from air &amp; grain</li><li>Ferments sugars to rise &amp; flavor bread</li><li>Needs daily care to thrive</li></ul></section><section class="s"><h2>How to Mix Your Starter</h2><ul><li>Use 100g flour + 100g water</li><li>Stir until smooth in a clean jar</li><li>Cover loosely for airflow</li><li>Mark level with rubber band</li></ul></section><section class="s"><h2>Feeding Schedule (Days 1–5)</h2><ul><li>Feed every 12 hours</li><li>Discard half before each feeding</li><li>Add 100g flour + 100g water</li><li>Keep at room temperature</li></ul></section><section class="s"><h2>Signs of a Healthy Starter</h2><ul><li>Visible bubbles throughout</li><li>Rises 1–2 inches after feeding</li><li>Tangy, fruity, or wine-like smell</li><li>No foul odors like rotten eggs</li></ul></section><section class="s"><h2>Day 3 Example</h2><ul><li>300g total volume after two feeds</li><li>Bubbles visible, rising 1.5 inches</li><li>Mild sour smell, not unpleasant</li><li>Ready for next feeding cycle</li></ul></section><section class="s"><h2>Try It Now!</h2><ul><li>Start with 100g flour + 100g water</li><li>Feed every 12 hours for 5 days</li><li>Discard half, then feed</li><li>Be patient—progress takes time</li></ul></section><section class="s"><h2>Recap &amp; Key Tips</h2><ul><li>Starter = living culture of microbes</li><li>Feed daily, discard half each time</li><li>Look for bubbles, rise, tangy smell</li><li>Keep at 70–75°F for best results</li></ul></section>
+<div class="bar" id="bar"></div><div class="ui"><span id="n"></span> · <a href="../lessons/01.html">back to the lesson</a> · arrows / tap</div>
+<script>
+const S = [...document.querySelectorAll('.s')]; let i = 0;
+const show = k => { i = Math.max(0, Math.min(S.length - 1, k)); S.forEach((s, j) => s.classList.toggle('on', j === i));
+  document.getElementById('n').textContent = (i + 1) + ' / ' + S.length; document.getElementById('bar').style.width = ((i + 1) / S.length * 100) + '%'; };
+addEventListener('keydown', e => { if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) show(i + 1); if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) show(i - 1); });
+addEventListener('click', e => { if (e.target.closest('a')) return; show(e.clientX > innerWidth / 3 ? i + 1 : i - 1); });
+show(0);
+</script></body></html>

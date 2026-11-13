@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mixing and Bulk Fermentation - slides</title><style>
+:root { --accent:#c2410c; } * { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #14120e; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.s { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; padding: 6vh 8vw; }
+.s.on { display: flex; } .s h2 { font-size: clamp(1.6rem, 4.5vw, 3.2rem); margin: 0 0 .6em; line-height: 1.15; }
+.s ul { font-size: clamp(1.05rem, 2.4vw, 1.7rem); line-height: 1.5; padding-left: 1.1em; } .s li { margin: .35em 0; }
+.s.cover h2 { font-size: clamp(2rem, 6vw, 4.2rem); } .kicker { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; }
+.bar { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--accent); transition: width .2s; }
+.ui { position: fixed; right: 1.2rem; bottom: 1rem; font-size: .85rem; color: #b9b1a3; } .ui a { color: #b9b1a3; }
+</style></head><body>
+<section class="s cover"><p class="kicker">Lesson 3 of 5</p><h2>Mixing and Bulk Fermentation</h2><p>Prepare dough and manage the first fermentation phase.</p></section><section class="s"><h2>Why Weight Matters</h2><ul><li>Use a scale for precision</li><li>Volume varies—weight doesn’t</li><li>Consistency in every bake</li><li>Start with grams, not cups</li></ul></section><section class="s"><h2>Basic Sourdough Recipe</h2><ul><li>500g bread flour</li><li>500g water (70°F)</li><li>100g active starter</li><li>10g fine sea salt</li></ul></section><section class="s"><h2>Mixing &amp; Autolyse</h2><ul><li>Combine flour and water</li><li>Stir until no dry bits remain</li><li>Rest 30 minutes (autolyse)</li><li>Let gluten start forming naturally</li></ul></section><section class="s"><h2>Stretch &amp; Fold Technique</h2><ul><li>Wet hands to prevent sticking</li><li>Stretch one side, fold over</li><li>Rotate bowl 90°, repeat</li><li>Do 4–6 sets over 2–3 hours</li></ul></section><section class="s"><h2>What Ready Dough Looks Like</h2><ul><li>Puffy and slightly jiggly</li><li>Full of visible bubbles</li><li>Holds shape when pressed</li><li>Soft, elastic, not sticky</li></ul></section><section class="s"><h2>Timing &amp; Environment</h2><ul><li>3–4 hours at 70–75°F</li><li>Warmer = faster fermentation</li><li>Cooler = slower, longer rise</li><li>Check dough, not just time</li></ul></section><section class="s"><h2>Try It Now</h2><ul><li>Weigh ingredients accurately</li><li>Autolyse 30 min</li><li>Stretch and fold 4 times</li><li>Check for puffiness &amp; bubbles</li></ul></section>
+<div class="bar" id="bar"></div><div class="ui"><span id="n"></span> · <a href="../lessons/03.html">back to the lesson</a> · arrows / tap</div>
+<script>
+const S = [...document.querySelectorAll('.s')]; let i = 0;
+const show = k => { i = Math.max(0, Math.min(S.length - 1, k)); S.forEach((s, j) => s.classList.toggle('on', j === i));
+  document.getElementById('n').textContent = (i + 1) + ' / ' + S.length; document.getElementById('bar').style.width = ((i + 1) / S.length * 100) + '%'; };
+addEventListener('keydown', e => { if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) show(i + 1); if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) show(i - 1); });
+addEventListener('click', e => { if (e.target.closest('a')) return; show(e.clientX > innerWidth / 3 ? i + 1 : i - 1); });
+show(0);
+</script></body></html>

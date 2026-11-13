@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maintaining and Feeding Your Starter - slides</title><style>
+:root { --accent:#c2410c; } * { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #14120e; color: #f4efe6; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.s { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; padding: 6vh 8vw; }
+.s.on { display: flex; } .s h2 { font-size: clamp(1.6rem, 4.5vw, 3.2rem); margin: 0 0 .6em; line-height: 1.15; }
+.s ul { font-size: clamp(1.05rem, 2.4vw, 1.7rem); line-height: 1.5; padding-left: 1.1em; } .s li { margin: .35em 0; }
+.s.cover h2 { font-size: clamp(2rem, 6vw, 4.2rem); } .kicker { color: var(--accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; }
+.bar { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--accent); transition: width .2s; }
+.ui { position: fixed; right: 1.2rem; bottom: 1rem; font-size: .85rem; color: #b9b1a3; } .ui a { color: #b9b1a3; }
+</style></head><body>
+<section class="s cover"><p class="kicker">Lesson 2 of 5</p><h2>Maintaining and Feeding Your Starter</h2><p>Keep your starter active and ready for baking.</p></section><section class="s"><h2>Why Your Starter Needs Care</h2><ul><li>A living culture needs regular feeding</li><li>Proper care ensures reliable bread</li><li>Healthy starter = better rise &amp; flavor</li><li>Consistent feeding keeps it active</li></ul></section><section class="s"><h2>Feed Correctly: The 1:1 Rule</h2><ul><li>Use equal weight: 100g flour + 100g water</li><li>Avoid volume measurements (cup sizes vary)</li><li>Use unbleached bread or whole wheat flour</li><li>Filter or boil tap water to remove chlorine</li></ul></section><section class="s"><h2>Storage Based on Baking Schedule</h2><ul><li>Room temp: Feed every 12–24 hours</li><li>Fridge: Feed once weekly</li><li>Cold slows fermentation but keeps it safe</li><li>Warm up 2–3 hours before baking</li></ul></section><section class="s"><h2>When Is Your Starter Ready?</h2><ul><li>Rises in 4–6 hours after feeding</li><li>Doubles in size with bubbles</li><li>Smells tangy, fruity—not rotten</li><li>No alcohol or hooch smell</li></ul></section><section class="s"><h2>Fix Common Problems</h2><ul><li>No rise? Too cold or underfed</li><li>Alcohol smell? Feed more often</li><li>Hooch? Pour off and feed</li><li>Mold? Discard and restart</li></ul></section><section class="s"><h2>Worked Example: Bake on Saturday</h2><ul><li>Friday night: Take from fridge, feed</li><li>Saturday morning: Should be bubbly and rising</li><li>Use 100g in dough, then feed again</li><li>Return to fridge until next bake</li></ul></section><section class="s"><h2>Try It Now</h2><ul><li>Weigh 100g starter, discard extra</li><li>Add 100g flour + 100g water</li><li>Mix, cover, check every 3 hours</li><li>Track bubbles and rise time</li></ul></section><section class="s"><h2>Key Takeaways</h2><ul><li>Feed by weight, not volume</li><li>Store by baking frequency</li><li>Ready in 4–6 hours, double in size</li><li>Smell sour, not rotten or alcoholic</li></ul></section>
+<div class="bar" id="bar"></div><div class="ui"><span id="n"></span> · <a href="../lessons/02.html">back to the lesson</a> · arrows / tap</div>
+<script>
+const S = [...document.querySelectorAll('.s')]; let i = 0;
+const show = k => { i = Math.max(0, Math.min(S.length - 1, k)); S.forEach((s, j) => s.classList.toggle('on', j === i));
+  document.getElementById('n').textContent = (i + 1) + ' / ' + S.length; document.getElementById('bar').style.width = ((i + 1) / S.length * 100) + '%'; };
+addEventListener('keydown', e => { if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) show(i + 1); if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) show(i - 1); });
+addEventListener('click', e => { if (e.target.closest('a')) return; show(e.clientX > innerWidth / 3 ? i + 1 : i - 1); });
+show(0);
+</script></body></html>
